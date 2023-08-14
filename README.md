@@ -10,5 +10,5 @@ This project is an application developed for hospital management and patient fol
 ## Technologies
 
 - Back-end: .NET
-- Veritabanı: PostgreSQL
+- Database: PostgreSQL
 - Front-end: HTML, CSS, JavaScript
