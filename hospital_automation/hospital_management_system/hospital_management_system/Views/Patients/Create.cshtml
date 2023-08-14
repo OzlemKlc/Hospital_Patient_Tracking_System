@@ -1,0 +1,35 @@
+﻿@model Patient
+
+<!-- <h1>Yeni Hasta Kaydı</h1> -->
+
+<form method="post" asp-route-patients=@Model asp-controller="Patients" asp-action="Create">
+    <div class="form-group">
+        <label>Identification Number: </label>
+        <input class="form-control" asp-for="TcNum" />
+        @Html.ValidationMessageFor(m => m.TcNum, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label>Name Surname :</label>
+        <input class="form-control" asp-for="NameSurname" />
+    </div>
+    <div class="form-group">
+        <label>Birth Date :</label>
+        <input class="form-control" asp-for="BirthDate" type="date" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+@{
+    var errorMessage = ViewBag.ErrorMessage;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+
+
+
+
+
+<a href="@Url.Action("Index")">Go Back</a>

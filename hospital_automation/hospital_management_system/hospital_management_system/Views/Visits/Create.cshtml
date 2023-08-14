@@ -1,0 +1,38 @@
+﻿@model Visit
+
+<!--  <h1>Ziyaret Ekle</h1> -->
+
+<form method="post" asp-controller="Visits" asp-action="Create">
+    <div class="form-group">
+        <label>Patient ID :</label>
+        <input class ="form-control" asp-for="PatientId" />
+    </div>
+    <div class="form-group">
+        <label>Visiting Date :</label>
+        <input class="form-control" asp-for="VisitingDate" type="date" />
+    </div>
+    <div class="form-group">
+        <label>Doctor Name :</label>
+        <input class="form-control" asp-for="DoctorName" />
+    </div>
+    <div class="form-group">
+        <label>Complaint :</label>
+        <input class="form-control"  asp-for="Complaint" />
+    </div>
+    <div class="form-group">
+        <label>Type Of Treatment :</label>
+        <input class="form-control"  asp-for="TypeOfTreatment" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<a href="@Url.Action("Index", "Visits")">Go Back</a>
+
+@{
+    var errorMessage = ViewBag.ErrorMessage;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}

@@ -1,0 +1,50 @@
+﻿/* index.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    table th,
+    table td {
+        padding: 8px;
+        border: 1px solid #ccc;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+        background-color: #e2e2e2;
+    }
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }

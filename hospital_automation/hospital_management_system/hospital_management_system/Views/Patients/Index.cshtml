@@ -1,0 +1,35 @@
+﻿@model List<Patient>
+
+<!-- <h1>Hasta Listesi</h1> -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Identification Number</th>
+            <th>Name Surname</th>
+            <th>Birth Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.TcNum</td>
+                <td>@patient.NameSurname</td>
+                <td>@patient.BirthDate.ToShortDateString()</td>
+                <td>
+                    <a asp-controller="Patients" asp-action="Edit" asp-route-id=@patient.Id>Edit</a> |
+                    <a asp-controller="Patients" asp-action="Delete" asp-route-id=@patient.Id>Delete</a> |
+                    @*<a href="@Url.Action("Delete", new { id = patient.Id })">Delete</a>*@
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create")">Add New Patient</a>
+<a href="@Url.Action("Index", "Visits")" class="btn btn-primary">Visits</a>
+
+

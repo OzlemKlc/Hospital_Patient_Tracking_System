@@ -1,0 +1,36 @@
+﻿@model List<Visit>
+
+<!-- <h1>Ziyaret Listesi</h1> -->
+
+<a href="@Url.Action("Create", "Visits")">Add New Visit</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Visiting Date</th>
+            <th>Doctor Name</th>
+            <th>Complaint</th>
+            <th>Type Of Treatment</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var visit in Model)
+        {
+            <tr>
+                <td>@visit.PatientId</td>
+                <td>@visit.VisitingDate</td>
+                <td>@visit.DoctorName</td>
+                <td>@visit.Complaint</td>
+                <td>@visit.TypeOfTreatment</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Visits", new { id = visit.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Visits", new { id = visit.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Patients")">Back To Patient List</a>
